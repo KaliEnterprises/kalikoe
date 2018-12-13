@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>Frozenbubble</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<link rel="stylesheet" href="css/supersized.css" type="text/css" media="screen" />
+		
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/supersized.3.1.3.min.js"></script>
+		
+		<script type="text/javascript">  
+			
+			jQuery(function($){
+				$.supersized({
+				
+					//Functionality
+					slideshow               :   1,		//Slideshow on/off
+					autoplay				:	1,		//Slideshow starts playing automatically
+					start_slide             :   1,		//Start slide (0 is random)
+					random					: 	1,		//Randomize slide order (Ignores start slide)
+					slide_interval          :   9000,	//Length between transitions
+					transition              :   1, 		//0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+					transition_speed		:	300,	//Speed of transition
+					new_window				:	1,		//Image links open in new window/tab
+					pause_hover             :   0,		//Pause slideshow on hover
+					keyboard_nav            :   1,		//Keyboard navigation on/off
+					performance				:	1,		//0-Normal, 1-Hybrid speed/quality, 2-Optimizes image quality, 3-Optimizes transition speed // (Only works for Firefox/IE, not Webkit)
+					image_protect			:	1,		//Disables image dragging and right click with Javascript
+					image_path				:	'img/', //Default image path
+
+					//Size & Position
+					min_width		        :   0,		//Min width allowed (in pixels)
+					min_height		        :   0,		//Min height allowed (in pixels)
+					vertical_center         :   1,		//Vertically center background
+					horizontal_center       :   1,		//Horizontally center background
+					fit_portrait         	:   0,		//Portrait images will not exceed browser height
+					fit_landscape			:   0,		//Landscape images will not exceed browser width
+					
+					//Components
+					navigation              :   0,		//Slideshow controls on/off
+					thumbnail_navigation    :   0,		//Thumbnail navigation
+					slide_counter           :   0,		//Display slide numbers
+					slide_captions          :   0,		//Slide caption (Pull from "title" in slides array)
+					slides 					:  	[		//Slideshow Images
+														{image : '000016.png', title : '', url : ''}, 
+														
+												]
+												
+				}); 
+		    });
+		    
+		</script>
+<style type="text/css">
+#content-text{ position:absolute; left:291px; top:540px; width:159px; height:224px;
+            cursor: default; wordWrap: break-word; overflow: hidden; margin: 0; padding: 0px"}
+</style>
+	</head>
+<body>
+<table border="0">
+<td height="20">
+</td>
+</table>
+<center>
+<object id="Object2" type="application/x-shockwave-flash" data="player_mp3_maxi.swf" width="200" height="20">
+<param name="wmode" value="opaque" />
+<param name="movie" value="player_mp3_maxi.swf" />
+<param name="autoplay" value="true" />
+<param name="autoload" value="true" />
+<param name="FlashVars" value="config=introzik_1.txt" />
+</object> 
+<noscript>
+      <div class="ns">
+        <div class="sns">Vous devez activer JavaScript pour visualiser cette page</div>
+        <div class="sns">Vous must activate JavaScript to view this page</div>
+        <div class="sns">&#x410;&#x43A;&#x442;&#x438;&#x432;&#x438;&#x440;&#x430;&#x439;&#x442;&#x435; JavaScript &#x430;&#x43A;&#x43E; &#x438;&#x441;&#x43A;&#x430;&#x442;&#x435; &#x434;&#x430; &#x43E;&#x442;&#x432;&#x43E;&#x440;&#x438;&#x442;&#x435; &#x442;&#x430;&#x437;&#x438; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x438;&#x446;&#x430;</div>
+      </div>
+    </noscript>
+    <div class="a"><applet width="640" height="480" archive="frozenBubble.jar" code="FrozenBubble"></applet></div>
+
+</center>
+<!--Instructions-->
+<!--
+<DIV id="content-text">
+<div align="center"><font face="Tahoma" color="#ff1418"><span style=" font-size:13px"><u>Instructions</u></span></font></div>
+<div align="left"><font face="Tahoma" color="#ffffff"><span style=" font-size:12px"><br />
+</span></font></div>
+<div align="left"><font face="Tahoma" color="#1f497d"><span style=" font-size:13px">C</span></font><font face="Tahoma"><span style=" font-size:12px">lick on the applet once 
+loaded</span></font></div>
+<div align="left"><font face="Tahoma" color="#ffffff"><span style=" font-size:12px"><br />
+</span></font></div>
+<div align="left"><font face="Tahoma" color="#1f497d"><span style=" font-size:13px">U</span></font><font face="Tahoma"><span style=" font-size:12px">se LEFT/RIGHT arrow 
+to move the launcher</span></font></div>
+<div align="left"><font face="Tahoma" color="#ffffff"><span style=" font-size:12px"><br />
+</span></font></div>
+<div align="left"><font face="Tahoma" color="#1f497d"><span style=" font-size:13px">S</span></font><font face="Tahoma"><span style=" font-size:12px">hift/UP arrow to fire</span></font></div>
+<div align="left"><font face="Tahoma" color="#ffffff"><span style=" font-size:13px"><br />
+</span></font></div>
+<div align="left"><font face="Tahoma" color="#1f497d"><span style=" font-size:13px">M</span></font><font face="Tahoma" color="#ffffff"><span style=" font-size:12px"> </span></font><font face="Tahoma"><span style=" font-size:12px">toggles colorblind 
+mode on/off</span></font></div>
+</DIV>-->
+
+</body>
+</html>

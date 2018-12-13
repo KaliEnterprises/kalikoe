@@ -1,0 +1,21 @@
+.elgg-slick-slider.elgg-state-loading {
+	position: relative;
+	height: 200px;
+	width: 100%;
+	overflow: hidden;
+	transition: all 300ms ease-out;
+}
+
+.elgg-slick-slider.elgg-state-loading:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #f9f9f9;
+	background-image: url('/../../../../_graphics/ajax_loader.gif');
+	background-size: 31px;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
