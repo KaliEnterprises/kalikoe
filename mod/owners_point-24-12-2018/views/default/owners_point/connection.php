@@ -1,9 +1,10 @@
 <?php
 
 $servername = "localhost";
-$username = "root";
-$password = "esfera";
-$dbname = "elgglive";
+$username = "kalikoe";
+$password = "test123$";
+$dbname = "elgg";
+
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

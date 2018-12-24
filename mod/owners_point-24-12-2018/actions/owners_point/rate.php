@@ -1,9 +1,10 @@
 <?php
 
 $servername = "localhost";
-$username = "root";
-$password = "esfera";
-$dbname = "elgglive";
+$username = "kalikoe";
+$password = "test123$";
+$dbname = "elgg";
+
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -11,10 +12,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-
-use hypeJunction\GameMechanics\Reward;
-
-
 
 
 $user_id 	= 	(int)get_input('user_id');
@@ -27,27 +24,19 @@ $user_email = 	elgg_get_logged_in_user_entity()->email;
 $set_point  =   1;
 $content_type = "video";
 
-
-
-
 if ($user_id !=0 && $content_id !=0 && $owner_id !=0) {
 
 
 	$user_query = "select * from get_user_point where user_id = $owner_id";
 	$user_point = "select * from elgg_user_point where user_id = $owner_id";
 
-	$countResult  = mysqli_query($conn, $user_query);
+	$countResult = mysqli_query($conn, $user_query);
 	$point_result = mysqli_query($conn, $user_point);
-	if (!Reward::awardPoints($set_point, $content_type, $owner_id)) {
-			return elgg_error_response(elgg_echo('mechanics:admin:award:error'));
-	}
+
 	if (!mysqli_num_rows($countResult)) {
-
-
 		$insert_data = "INSERT INTO `get_user_point`( `user_id`, `user_name`, `user_email`) VALUES ('$owner_id','$user_name','$user_email')";
 
 		if ($conn->query($insert_data) === TRUE) {
-
 	    	echo "New record created successfully";
 	    	$sql = "INSERT INTO elgg_user_point_details (`user_id`,`content_id`, `content_owner_id`,`date`,`status`,`get_point`,`content_type`)
 			VALUES ('$user_id', '$content_id', '$owner_id','$date','$status','$set_point','$content_type')";
@@ -84,6 +73,7 @@ if ($user_id !=0 && $content_id !=0 && $owner_id !=0) {
 		} else {
 		    echo "Error: " . $insert_data . "<br>" . $conn->error;
 		}
+	
 
 	}else{
 

@@ -1,10 +1,13 @@
 <?php
 
 $video = elgg_extract('entity', $vars, false);
+elgg_require_js("owners_point/view");
+
 
 if (!$video) {
 	return true;
 }
+
 
 $owner = $video->getOwnerEntity();
 $categories = elgg_view('output/categories', $vars);
@@ -65,11 +68,15 @@ $params = array(
 	'subtitle' => $subtitle,
 	'content' => $excerpt,
 );
- echo '<div align="center" class="izapPlayer">';
+
+echo '<div align="center" class="izapPlayer">';
 echo $video->getPlayer();
 echo '</div>';
+
+
 $params = $params + $vars;
 $list_body = elgg_view('object/elements/summary', $params);
+
 echo elgg_view_image_block($video_icon, $list_body);
 // echo '<div align="center" class="izapPlayer">';
 // echo $video->getPlayer();
@@ -81,36 +88,29 @@ echo elgg_view_image_block($video_icon, $list_body);
 //             'class' => 'rate_btn',            
 //         ));
 // echo '</span>';
+echo '<span class ="rate_btn testing">';
 
-echo '<span class ="rate_btn">';
 // echo elgg_view('rate/rate', array('entity'=> $vars['entity'],
 // ));
+
 echo elgg_view("owners_point/voting", array('entity' => $vars['entity']));
 
 echo '</span>';
-echo '<a href="http://kalikoe.com/challenge/list/all/"><span class ="Challenge_btn">';
-  echo elgg_view('input/submit',array(
-            'name' => 'Challenge',
-            'value' => 'Challenge',
-            'class' => 'Challenge_btn',
-
-        ));
-
-  echo '</a></span>';
-
-  
+echo '<span class ="Challenge_btn">';
+echo elgg_view('input/submit',array(
+        'name' => 'Challenge',
+        'value' => 'Challenge',
+        'class' => 'Challenge_btn',            
+    ));
+echo '</span>';
 
 
-  echo '<span class ="Sponsor_btn">';
+    echo '<span class="sponsor_btn49">';
+  		echo elgg_view("owners_point/sponsor", array('entity' => $vars['entity']));
+    echo '</span>';
+		
 
-   echo elgg_view('input/submit',array(
-            'name' => 'Sponsor',
-            'value' => 'Sponsor',
-            'class' => 'Sponsor_btn',            
-        ));
-   echo '</span>';
-
-   echo '<span class ="comment_btn">';
+    echo '<span class="comment_btn">';
     echo elgg_view('input/submit',array(
             'name' => 'Comment',
             'value' => 'Comment',
@@ -118,8 +118,7 @@ echo '<a href="http://kalikoe.com/challenge/list/all/"><span class ="Challenge_b
         ));
     echo '</span>';
 
-    
- echo '<p class="Challenge_video" hidden>Challenge button is win extra ksd coins by challenging a person with a video similar to yours</p>';
+echo '<p class="Challenge_video" hidden>Challenge button is win extra ksd coins by challenging a person with a video similar to yours</p>';
 
 echo '<p class="rate_video" hidden>Rate it is "whenever you like a video give it a star and 1 ksd coin will be giving to the content creator"</p>';
 
@@ -127,6 +126,40 @@ echo '<p class="sponsor_video" hidden>Sponsor button is "give a content creator 
 </p>';
 
 echo '<p class="comment_video" hidden>Comment is: Add a comment under a video you like</p>';
+
+
+
+// echo '<div class= "permitForm" class="grouped">';
+// echo '<select name="types" id="permit" class="Sponsor_btn">';
+// echo '<option  selected="selected" value="">select KSD</option>';
+//       echo '<option value="1">1 KSD</option>';
+//       echo  '<option value="2">2 KSD</option>';
+//       echo  '<option value="3">3 KSD</option>';
+// echo '</select>';
+// echo '</div>';
+
+
+// echo '<div class="hide-answer" id="answer-1" title="First Condition">';
+// echo '<p>20 extra points</p>';
+// echo '</div>';
+
+// echo '<div class= "hide-answer" id="answer-2" title="Second Coin">';
+// echo '<p>50 extra points</p>';
+// echo '</div>';
+
+// echo '<div class= "hide-answer" id="answer-3" title="Third Coin">';
+// echo '<p>100 extra points</p>';
+// echo '</div>';
+
+
+//   echo '<div class="popup" id="answer-1">';
+// echo '<div class="popup_content">';
+// echo '<h4 class="popup_title">50 extra points</h4>';
+// echo '<button type="button" class="close_button" data-dismiss="modal">Close</button>';
+//      echo '</div>';
+//      echo '</div>';
+
+
 
 $show_add_form = elgg_extract('show_add_form', $vars, true);
 $full_view = elgg_extract('full_view', $vars, true);

@@ -7,10 +7,8 @@
 	$owner_id = $vars["entity"]->owner_guid;
 	$working = 1;
 
-	
-
-	$sql="SELECT * FROM `elgg_user_point_details` WHERE content_id = $guid AND user_id = $user_id AND content_type ='video' ";
-	$likeCount = "SELECT * FROM `elgg_user_point_details` WHERE content_id = $guid AND content_type = 'video'";
+	$sql="SELECT * FROM `elgg_user_point_details` WHERE content_id = $guid AND user_id = $user_id";
+	$likeCount = "SELECT * FROM `elgg_user_point_details` WHERE content_id = $guid";
 	//echo $likeCount;die();
 	$countResult = mysqli_query($conn, $likeCount);
 	
@@ -21,7 +19,7 @@
 	if (!$row) { ?>
 
 <div>
-	<form action="<?php echo elgg_get_site_url(); ?>action/owners_point/rate" method="post" class="owner_point_rate">
+	<form action="<?php echo elgg_get_site_url(); ?>action/owners_point/rate" method="post">
 		<?php
 
 			echo elgg_view('input/hidden', array('name' => 'user_id','value' =>$user_id ));
@@ -30,13 +28,13 @@
 			echo elgg_view('input/securitytoken');
 
 		?>
-	<button type="submit" class="like_btn like_blank"><?= $countLink; ?></button>
+	<button type="submit">click</button>
 	</form>
-	<!-- <p><?= $countLink; ?></p> -->
+	<p><?= $countLink; ?></p>
 </div>
 
 <?php }else{
 
-	echo "<span class='liked'><i class='fa fa-star'></i><p>".$countLink."</p></span>";
- 	// echo ""; 
+	echo "You have already liked it";
+	 echo "<p>".$countLink."</p>"; 
 } ?>

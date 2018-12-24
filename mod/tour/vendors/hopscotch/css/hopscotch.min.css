@@ -828,3 +828,32 @@ span.liked i.fa {
     text-align: center;
     font-weight: normal;
 }
+
+
+
+/******************************************\
+           181218   css here
+\******************************************/
+
+
+span.sponsor_btn49 {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    position: relative;
+    text-align: center;
+}
+.sponsor_btn49 > div {
+    display: flex;
+}
+.sponsor_btn49 > div > p {
+    padding: 5px 10px 5px 5px
+}
+.sponsor_btn49 form {
+    margin: 0px
+}
+span.sponsor_btn49 input {
+    padding-right: 1px
+}
+
+
